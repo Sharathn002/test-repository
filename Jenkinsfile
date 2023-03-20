@@ -45,7 +45,7 @@ pipeline {
     stage('Run Python Script') {
       steps {
         sh """
-          python my_script.py ${params.arg1} ${params.arg2}
+          python3 my_script.py ${params.arg1} ${params.arg2}
         """
       }
     }
