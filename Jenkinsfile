@@ -2,7 +2,7 @@ pipeline {
   agent any
   parameters {
     string(name: 'cluster_name', defaultValue: 'webapCluster/cfvdf6ef0lb6gpb1puig', description: 'Enter the cluster name')
-    string(name: 'region', defaultValue: 'jp tok', description: 'Enter the region name in "jp tok" formate')
+    string(name: 'region', defaultValue: '"jp tok"', description: 'Enter the region name in ' ' formate. ex:"jp tok" ')
     string(name: 'api_token', defaultValue: '3e91771e-40d2-42cd-96ac-ebe08462c96c', description: 'Enter the api token of that region')
     string(name: 'duration_in_hours', defaultValue: '1.5', description: 'Enter the duration for the silencing')
   }
