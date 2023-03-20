@@ -56,8 +56,22 @@ def disable_silencing_alert(json_data):
 def main():
 
     #converting the json file into python objects
-    json_file=open('template.json','r')
-    json_data = json.load(json_file)
+    duration=float(sys.argv[4])
+
+    json_data=[
+      {
+        "list_of_regions_available":["US South","EU DE","EU GB","JP OSA","JP TOK","US East","AU SYD","CA TOR","BR SAO"],
+        "region":sys.argv[2],
+        "api_token": sys.argv[3],
+        "cluster_name":sys.argv[1],
+        "duration_in_hours": duration
+      }
+    ]
+    print(json_data[0]["region"])
+    print(json_data[0]["api_token"])
+    print(json_data[0]["cluster_name"])
+    print(json_data[0]["duration_in_hours"])
+    print(type(json_data[0]["duration_in_hours"]))
 
     disable_silencing_alert(json_data)
     
