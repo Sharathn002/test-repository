@@ -54,10 +54,7 @@ def main():
     #converting the json file into python objects
 #     json_file=open('template.json','r')
 #     json_data = json.load(json_file)
-    print(sys.argv[4])
     duration=float(sys.argv[4])
-    print(duration)
-    print(type(duration))
 
     json_data=[
       {
@@ -65,7 +62,7 @@ def main():
         "region":sys.argv[2],
         "api_token": sys.argv[3],
         "cluster_name":sys.argv[1],
-        "duration_in_hours": 1.5
+        "duration_in_hours": duration
       }
     ]
     print(json_data[0]["region"])
@@ -73,8 +70,7 @@ def main():
     print(json_data[0]["cluster_name"])
     print(json_data[0]["duration_in_hours"])
     print(type(json_data[0]["duration_in_hours"]))
-    print(sys.argv[4])
-    print(type(sys.argv[4]))
+    
     
 
 
