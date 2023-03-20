@@ -69,6 +69,8 @@ def main():
     print(json_data[0]["cluster_name"])
     print(json_data[0]["duration_in_hours"])
     print(type(json_data[0]["duration_in_hours"]))
+    print(sys.argv[4])
+    print(type(sys.argv[4]))
     
 
 
