@@ -5,7 +5,9 @@ if len(sys.argv) > 1:
     arg1 = sys.argv[1]
     arg2 = sys.argv[2]
     print(f'Argument 1: {arg1}')
+    print(type(arg1))
     print(f'Argument 2: {arg2}')
+    print(type(arg2))
 else:
     print('No arguments provided.')
 
