@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('silencing alert') {
       steps {
-        sh 'python3 silencing_rule.py ${params.cluster_name} ${params.region} ${params.api_token} ${params.duration_in_hours}'
+        sh 'python3 creating_silencing_rule.py ${params.cluster_name} ${params.region} ${params.api_token} ${params.duration_in_hours}'
       }
     }
      stage('sleep') {
