@@ -54,6 +54,10 @@ def main():
     #converting the json file into python objects
 #     json_file=open('template.json','r')
 #     json_data = json.load(json_file)
+    print(sys.argv[4])
+    duration=float(sys.argv[4])
+    print(duration)
+    print(type(duration))
 
     json_data=[
       {
