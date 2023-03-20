@@ -42,7 +42,7 @@ def disable_silencing_alert(json_data):
                     # print(delete_silencing_url)
                     response = requests.delete(delete_silencing_url, headers=headers)
                     if response.status_code == 200:
-                        print('Silencing rule deleted successfully.')
+                        print(f'Silencing rule with id:{rule_id} deleted successfully.')
                     else:
                         print('Failed to delete silencing rule. Status code:', response.status_code)
 
@@ -67,11 +67,11 @@ def main():
         "duration_in_hours": duration
       }
     ]
-    print(json_data[0]["region"])
-    print(json_data[0]["api_token"])
-    print(json_data[0]["cluster_name"])
-    print(json_data[0]["duration_in_hours"])
-    print(type(json_data[0]["duration_in_hours"]))
+#     print(json_data[0]["region"])
+#     print(json_data[0]["api_token"])
+#     print(json_data[0]["cluster_name"])
+#     print(json_data[0]["duration_in_hours"])
+#     print(type(json_data[0]["duration_in_hours"]))
 
     disable_silencing_alert(json_data)
     
