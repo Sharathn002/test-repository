@@ -17,16 +17,16 @@ pipeline {
          sleep time: 60, unit: 'SECONDS' 
        }
      }
-     stage('crash') {
-       steps {
-         sh 'python3 crash.py'
-       }
-       post {
-         always {
-               sh """python3 deleting_silencing_rule.py ${params.cluster_name} ${params.region} ${params.api_token} ${params.duration_in_hours}"""
-               }
-           }
-    }
+//      stage('crash') {
+//        steps {
+//          sh 'python3 crash.py'
+//        }
+//        post {
+//          always {
+//                sh """python3 deleting_silencing_rule.py ${params.cluster_name} ${params.region} ${params.api_token} ${params.duration_in_hours}"""
+//                }
+//            }
+//     }
      stage('deleting silencing rule') {
        steps {
          sh """python3 deleting_silencing_rule.py ${params.cluster_name} ${params.region} ${params.api_token} ${params.duration_in_hours}"""
