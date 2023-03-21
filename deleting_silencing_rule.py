@@ -12,7 +12,7 @@ def disable_silencing_alert(json_data):
         api_token=dict["api_token"]
 
         #This is the endpoint for the silencing
-        silencing_url='https://'+dict['region'].split('_')[0].lower()+'-'+dict['region'].split('_')[1].lower()+'.monitoring.cloud.ibm.com/api/v1/silencingRules'
+        silencing_url='https://'+dict['region'].split(' ')[0].lower()+'-'+dict['region'].split(' ')[1].lower()+'.monitoring.cloud.ibm.com/api/v1/silencingRules'
 
         #this is the endpoint for disabling the silencing rule
         disable_url=silencing_url+'/disable'
