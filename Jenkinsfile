@@ -8,7 +8,7 @@ pipeline {
    stages {
       stage('Run Python Script') {
          steps {
-            sh "python your_script.py create --arg1 ${params.ARG1} --arg2 ${params.ARG2}"
+            sh "python3 your_script.py create --arg1 ${params.ARG1} --arg2 ${params.ARG2}"
          }
       }
    }
