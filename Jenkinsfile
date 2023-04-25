@@ -8,7 +8,8 @@ pipeline {
   stages {
     stage('silencing alert') {
             steps {
-              sh """python3 fetch_all_evidences.py ${params.service_type} ${params.id} ${params.env} """
+//               sh """python3 fetch_all_evidences.py ${params.service_type} ${params.id} ${params.env} """
+                sh """python3 fetch_all_evidences.py c2s 45346345 prod"""
             }
           }
   }
