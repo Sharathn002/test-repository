@@ -27,7 +27,8 @@ pipeline {
                         userInput = input(
                             message: 'Please enter the session_id by which the log file should be filtered',
                             parameters: [
-                                string(defaultValue: '000', description: 'Enter the session_id', name: 'session_id')
+                                string(defaultValue: '000', description: 'Enter the session_id', name: 'session_id'),
+                                string(defaultValue: '00:00:00', description: 'Enter the END time in HH:MM:SS format', name: 'end_time')
                             ]
                         )
                     } else if (params.myChoice == 'date') {
