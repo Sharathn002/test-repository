@@ -53,7 +53,7 @@ pipeline {
 
                     if (userInput) {
                         if (params.myChoice == 'session_id') {
-                            echo 'session id inputed properly'
+                            echo "session id inputed properly  : ${userInput.session_id} "
                             sh """python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --session_ID ${userInput.session_id}"""  
                         } else if (params.myChoice == 'date') {
                             echo 'session id inputed properly'
