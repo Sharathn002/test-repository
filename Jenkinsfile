@@ -51,11 +51,6 @@ pipeline {
                     }
 
                     if (userInput) {
-                        echo "User entered string: ${userInput.myStringParam}"
-                        echo "User selected option: ${userInput.myChoiceParam}"
-                        echo "User entered other string: ${userInput.myOtherStringParam}"
-                        echo "User selected boolean: ${userInput.myBoolParam}"
-
                         if (params.myChoice == 'session_id') {
                             sh "python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --session_id ${userInput.session_id}"  
                         } else if (params.myChoice == 'date') {
