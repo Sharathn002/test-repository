@@ -27,14 +27,14 @@ pipeline {
                         userInput = input(
                             message: 'Please enter the session_id by which the log file should be filtered',
                             parameters: [
-                                string(defaultValue: '', description: 'Enter the session_id', name: 'session_id')
+                                string(defaultValue: '000', description: 'Enter the session_id', name: 'session_id')
                             ]
                         )
                     } else if (params.myChoice == 'date') {
                         userInput = input(
                             message: 'Please enter the date by which the log file should be filtered',
                             parameters: [
-                                string(defaultValue: '', description: 'Enter a date in YYYY-MM-DD format', name: 'date'),
+                                string(defaultValue: '2000-01-01', description: 'Enter a date in YYYY-MM-DD format', name: 'date'),
                             ]
                         )
                     }else if (params.myChoice == 'time_range') {
