@@ -4,11 +4,11 @@ def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument('function', help='Name of function to call')
-    parser.add_argument('--connection_id', help='Session id', default='')
-    parser.add_argument('--session_id', help='Session id', default='')
-    parser.add_argument('--date', help='date', default='')
-    parser.add_argument('--start_time', help='start time', default='')
-    parser.add_argument('--end_time', help='end time', default='')
+    parser.add_argument('--connection_id', help='Session id', default='0')
+    parser.add_argument('--session_id', help='Session id', default='0')
+    parser.add_argument('--date', help='date', default='0')
+    parser.add_argument('--start_time', help='start time', default='0')
+    parser.add_argument('--end_time', help='end time', default='0')
     args = parser.parse_args()
 
     if args.function == 'session_id':
