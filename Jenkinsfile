@@ -34,7 +34,7 @@ pipeline {
                         userInput = input(
                             message: 'Please enter the date by which the log file should be filtered',
                             parameters: [
-                                string(defaultValue: '2000-01-01', description: 'Enter a date in YYYY-MM-DD format', name: 'date'),
+                                string(defaultValue: '2000-01-01', description: 'Enter a date in YYYY-MM-DD format', name: 'date')
                             ]
                         )
                     }else if (params.myChoice == 'time_range') {
@@ -52,6 +52,7 @@ pipeline {
 
                     if (userInput) {
                         if (params.myChoice == 'session_id') {
+                            echo 'session id inputed properly'
                             sh "python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --session_id ${userInput.session_id}"  
                         } else if (params.myChoice == 'date') {
                             sh "python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --date ${userInput.date}"
