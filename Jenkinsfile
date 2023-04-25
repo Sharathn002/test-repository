@@ -54,9 +54,10 @@ pipeline {
                     if (userInput) {
                         if (params.myChoice == 'session_id') {
                             echo 'session id inputed properly'
-                            sh "python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --session_id ${userInput.session_id}"  
+                            sh """python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --session_id ${userInput.session_id}"""  
                         } else if (params.myChoice == 'date') {
-                            sh "python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --date ${userInput.date1}"
+                            echo 'session id inputed properly'
+                            sh """python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --date ${userInput.date1}"""
                         } else if (params.myChoice == 'time_range') {
                             sh "python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --date ${userInput.date2} --start_time ${userInput.start_time} --end_time ${userInput.end_time}"
                         }
