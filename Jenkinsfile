@@ -6,10 +6,9 @@ pipeline {
         string(name: 'id', defaultValue: '', description: 'id of the gateway or vpn server as per the service')
     }
   stages {
-    stage('silencing alert') {
+    stage('fetch all evidences') {
             steps {
-//               sh """python3 fetch_all_evidences.py ${params.service_type} ${params.id} ${params.env} """
-                sh """python3 fetch_all_evidences.py ${params.service_type} 45346345 prod"""
+                sh """python3 fetch_all_evidences.py ${params.service_type} ${params.id} ${params.env}"""
             }
           }
   }
