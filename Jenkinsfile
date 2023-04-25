@@ -1,15 +1,16 @@
 pipeline {
-   agent any
-   parameters {
-      string(name: 'FUNCTION', defaultValue: '', description: 'Name of function to call')
-      string(name: 'ARG1', defaultValue: '', description: 'First argument')
-      string(name: 'ARG2', defaultValue: '', description: 'Second argument')
-   }
-   stages {
-      stage('Run Python Script') {
-         steps {
-            sh "python3 check.py create --arg1 ${params.ARG1} --arg2 ${params.ARG2}"
-         }
-      }
-   }
+    agent any
+  parameters {
+        choice(name: 'service_type', choices: ['c2s','s2s'], description: 'Select the type of the service')
+        choice(name: 'Environment', choices: ['stage','production'], description: 'Select the type of the environment')
+        string(name: 'id', defaultValue: '', description: 'Enter the id')
+    }
+  stages {
+    stage('silencing alert') {
+            steps {
+              sh """python3 fetch_all_evidences.py --service_type ${params.service_type} --id ${params.id} --env ${params.Environment}"""
+            }
+          }
+  }
+
 }
