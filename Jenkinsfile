@@ -34,14 +34,14 @@ pipeline {
                         userInput = input(
                             message: 'Please enter the date by which the log file should be filtered',
                             parameters: [
-                                string(defaultValue: '2000-01-01', description: 'Enter a date in YYYY-MM-DD format', name: 'date')
+                                string(defaultValue: '2000-01-01', description: 'Enter a date in YYYY-MM-DD format', name: 'date1')
                             ]
                         )
                     }else if (params.myChoice == 'time_range') {
                         userInput = input(
                             message: 'Please enter the date and time_range by which the log file should be filtered',
                             parameters: [
-                                string(defaultValue: '', description: 'Enter the date in YYYY-MM-DD format', name: 'date'),
+                                string(defaultValue: '', description: 'Enter the date in YYYY-MM-DD format', name: 'date2'),
                                 string(defaultValue: '00:00:00', description: 'Enter the START time in HH:MM:SS format', name: 'start_time'),
                                 string(defaultValue: '00:00:00', description: 'Enter the END time in HH:MM:SS format', name: 'end_time')
                             ]
@@ -55,9 +55,9 @@ pipeline {
                             echo 'session id inputed properly'
                             sh "python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --session_id ${userInput.session_id}"  
                         } else if (params.myChoice == 'date') {
-                            sh "python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --date ${userInput.date}"
+                            sh "python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --date ${userInput.date1}"
                         } else if (params.myChoice == 'time_range') {
-                            sh "python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --date ${userInput.date} --start_time ${userInput.start_time} --end_time ${userInput.end_time}"
+                            sh "python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --date ${userInput.date2} --start_time ${userInput.start_time} --end_time ${userInput.end_time}"
                         }
 
                     }
