@@ -2,11 +2,23 @@ pipeline {
     agent any
 
     parameters {
+        stashedFile 'input_log.log'
         string(name: 'connection_id', defaultValue: '', description: 'Enter the connection_id')
         choice(choices: ['session_id', 'date', 'time_range'], description: 'select the filter choice by which log files should be filtered', name: 'myChoice')
     }
-
+    
     stages {
+        stage("upload"){
+            steps{
+                unstash 'input_log.log'
+            }
+
+        }
+        stage("ls"){
+            steps{
+            sh "ls -al"
+            }
+        }
         stage('Enter parameters') {
             steps {
                 script {
