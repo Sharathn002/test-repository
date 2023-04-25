@@ -49,6 +49,7 @@ pipeline {
                     } else {
                         echo 'No parameters required for this branch'
                     }
+                    echo "userInput: ${userInput}"
 
                     if (userInput) {
                         if (params.myChoice == 'session_id') {
