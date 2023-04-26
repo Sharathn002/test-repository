@@ -27,8 +27,8 @@ pipeline {
                         userInput = input(
                             message: 'Please enter the session_id by which the log file should be filtered',
                             parameters: [
-                                string(defaultValue: '000', description: 'Enter the session_id', name: 'session_id'),
-                                string(defaultValue: '00:00:00', description: 'Enter the END time in HH:MM:SS format', name: 'end_time')
+                                string(defaultValue: '000', description: 'Enter the session_id', name: 'session_id')
+//                                 string(defaultValue: '00:00:00', description: 'Enter the END time in HH:MM:SS format', name: 'end_time')
                             ]
                         )
                     } else if (params.myChoice == 'date') {
@@ -54,11 +54,11 @@ pipeline {
 
                     if (userInput) {
                         if (params.myChoice == 'session_id') {
-                            echo "session id inputed properly  : ${userInput.session_id} "
-                            sh """python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --session_ID ${userInput.session_id}"""  
+                            echo "session id inputed properly  : ${userInput} "
+                            sh """python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --session_ID ${userInput}"""  
                         } else if (params.myChoice == 'date') {
                             echo 'session id inputed properly'
-                            sh """python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --dates ${userInput.date1}"""
+                            sh """python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --dates ${userInput}"""
                         } else if (params.myChoice == 'time_range') {
                             sh "python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --dates ${userInput.date2} --start_time ${userInput.start_time} --end_time ${userInput.end_time}"
                         }
