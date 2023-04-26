@@ -47,11 +47,11 @@ pipeline {
 
                     if (userInput) {
                         if (params.myChoice == 'session_id') {
-                            sh """python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --session_ID ${userInput}"""  
+                            sh """python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --session_id ${userInput}"""  
                         } else if (params.myChoice == 'date') {
-                            sh """python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --dates ${userInput}"""
+                            sh """python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --date ${userInput}"""
                         } else if (params.myChoice == 'time_range') {
-                            sh "python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --dates ${userInput.date} --start_time ${userInput.start_time} --end_time ${userInput.end_time}"
+                            sh "python3 test.py ${params.myChoice} --connection_id ${params.connection_id} --date ${userInput.date} --start_time ${userInput.start_time} --end_time ${userInput.end_time}"
                         }
 
                     }
