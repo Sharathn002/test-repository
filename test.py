@@ -68,7 +68,7 @@ def filter_error_logs_on_time(file_op,logs_content,connection_id,input_date,star
                     flag=True
                     
                 if(bool(re.findall(destroy_regex,logs_content[line_no])) and flag):
-                    print(line_no+1)
+#                     print(line_no+1)
                     # Extracting session id from <peer_95.43.229.201_02b7-7f855c54-bdb6-49cc-baf9-dffb1d837851_0x0|942>
                     session_id = logs_content[line_no].split(' ')[4].split('|')[1].replace('>','')
                     freq+=1
@@ -107,7 +107,7 @@ def filter_error_logs_on_date(file_op,logs_content,connection_id,input_date,erro
                 flag=True
                 
             if(bool(re.findall(destroy_regex,logs_content[line_no])) and flag):
-                print(line_no+1)
+#                 print(line_no+1)
                 # Extracting session id from <peer_95.43.229.201_02b7-7f855c54-bdb6-49cc-baf9-dffb1d837851_0x0|942>
                 session_id = logs_content[line_no].split(' ')[4].split('|')[1].replace('>','')
                 freq+=1
