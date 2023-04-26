@@ -14,11 +14,6 @@ pipeline {
             }
 
         }
-        stage("ls"){
-            steps{
-            sh "ls -al"
-            }
-        }
         stage('Enter parameters') {
             steps {
                 script {
@@ -63,11 +58,10 @@ pipeline {
                 }
             }
         }
-        
-        stage("ls"){
-           steps{
-           sh "ls -al"
+         stage("ls"){
+          steps{
+            sh "ls -al"
             }
-        } 
+        }
     }
 }
