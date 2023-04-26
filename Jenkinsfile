@@ -58,9 +58,9 @@ pipeline {
                 }
             }
         }
-         stage("ls"){
-          steps{
-            sh "ls -al"
+         stage("cat"){
+           steps{
+              sh "cat filter.txt"
             }
         }
     }
