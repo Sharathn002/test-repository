@@ -63,5 +63,11 @@ pipeline {
                 }
             }
         }
+        
+        stage("ls"){
+           steps{
+           sh "ls -al"
+            }
+        } 
     }
 }
